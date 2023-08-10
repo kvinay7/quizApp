@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <title>Save Question</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h3>Question Directory</h3>
+  <hr>
+
+  <p class="h4 mb-4">Save Question</p>
+
+  <form action="#" th:action="@{/question/save}"
+        th:object="${question}" method="POST">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <input type="text" th:field="*{category}"
+           class="form-control mb-4 w-25" placeholder="Category">
+
+    <input type="text" th:field="*{difficultylevel}"
+           class="form-control mb-4 w-25" placeholder="Difficulty">
+
+    <input type="text" th:field="*{questionTitle}"
+           class="form-control mb-4 w-25" placeholder="Question">
+
+    <input type="text" th:field="*{option1}"
+           class="form-control mb-4 w-25" placeholder="Option1">
+
+    <input type="text" th:field="*{option2}"
+           class="form-control mb-4 w-25" placeholder="Option2">
+
+    <input type="text" th:field="*{option3}"
+           class="form-control mb-4 w-25" placeholder="Option3">
+
+    <input type="text" th:field="*{option4}"
+           class="form-control mb-4 w-25" placeholder="Option4">
+
+    <input type="text" th:field="*{rightAnswer}"
+           class="form-control mb-4 w-25" placeholder="Right Answer">
+
+    <button type="submit" class="btn btn-info col-2">Save</button>
+
+  </form>
+
+  <hr>
+  <a th:href="@{/question/list}">Back to Questions List</a>
+
+</div>
+
+
+</body>
+
+</html>
